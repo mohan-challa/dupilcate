@@ -1,0 +1,107 @@
+<html>
+<head>
+	<style>
+	
+		.editor
+        {
+			border:solid 1px #ccc;
+			background:black;
+			color:white;
+			padding: 120px;
+			min-height:180px;
+        }
+		
+		
+		   .sample-toolbar
+        {
+			border:solid 1px #ddd;
+			background:#f4f4f4;
+			padding: 5px;
+			border-radius:3px;
+			}
+			
+			
+        
+
+	</style>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+
+<body>
+
+	<div class="sample-toolbar">
+	<select id="mySelect"></select> <button onclick="myFunction()">Language</button>
+</div>
+
+
+<div class="editor" id="sampleeditor">
+	</div>
+	<div class="Submit" id="samplerun">
+    </select><button onclick="Run" style = "align:center;">Submit</button>
+	</div>
+	
+
+	<script>
+	 var commonKeywords = ["auto","double","int","struct","break","else","long",
+      "switch","case","enum","register","typedef","char",
+      "extern","return","union","const","float","short",
+      "unsigned","continue","for","signed","void","default",
+      "goto","sizeof","voltile","do","if","static","while"]
+	  
+	 function exist(word)
+	 {
+	 while(word!=commonKeywords.length-1)
+	 {
+	     if(word = commonKeywords[i])
+		 {
+		    return true;
+		 }
+		 else
+		    continue;
+	 }
+	 return false;
+	 }
+	
+	function myFunction() {
+          var x = document.createElement("OPTION");
+           x.setAttribute("value", "C");
+          var t = document.createTextNode("C");
+          x.appendChild(t);
+          document.getElementById("mySelect").appendChild(x);
+		  
+		  var y = document.createElement("OPTION");
+           y.setAttribute("value", "C++");
+          var t1 = document.createTextNode("C++");
+          y.appendChild(t1);
+          document.getElementById("mySelect").appendChild(y);
+		  
+		  var z = document.createElement("OPTION");
+           x.setAttribute("value", "Python");
+          var t2 = document.createTextNode("Python");
+          z.appendChild(t2);
+          document.getElementById("mySelect").appendChild(z);
+		  
+        }
+		
+		
+		window.addEventListener('load', function(){
+			document.getElementById('sampleeditor').setAttribute('contenteditable', 'true');
+        });
+		
+       
+		
+		while(true)
+		{
+			var word=prompt();
+			if(exist(word))
+			{
+			 word.fontcolor( "blue" );
+			}
+		}
+		
+		
+	  
+		
+	</script>
+</body>
+</html>
